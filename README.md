@@ -69,13 +69,18 @@ npx cypress open
 4. Select 6 meals plan and continue
 5. Complete account creation with test data:
    - Email: qa.mail@gmail.com (generated with timestamp)
-   - First Name: My Name
-   - Last Name: My Lastname
    - Password: 123123123
 
 **Assertions:**
 - URL must contain "en/meal-select"
 - Verify more than one meal is displayed in the meals list
+
+**Issues & Decisions**
+
+Some limitations came up during implementation that required specific workarounds or conscious choices:
+
+- The challenge suggests using `qa.mail@gmail.com`, but this email is already taken in CookUnity’s system, causing the signup test to fail after the first run.
+- To solve this, I added timestamp-based email generation to keep the same format but ensure uniqueness.
 
 ### Backend API Tests - GoRest API
 **File:** `tests/api/goRestApi.cy.js`
@@ -91,6 +96,11 @@ npx cypress open
 2. Update first user name via PATCH request
 3. PATCH https://gorest.co.in/public/v1/users/{userId}
 4. Assert: name updated and status code 200
+
+**Issues & Decisions**
+
+- The GoRest API PATCH test uses email "jana.waters@hotmail.us" as specified in requirements, but this email already exists in the API database, causing the test to fail on subsequent runs. Also, the API has a default limit of 10 users per page. 
+- In this case, I decided to follow the exact challenge requirements without implementing pagination or email generation, as these were not specified in the test requirements. 
 
 ## 🛠️ Configuration
 
@@ -126,40 +136,12 @@ The project uses Mochawesome for generating HTML test reports:
 - Easy to update test data without changing test logic
 
 ### Custom Commands
-- `checkElementVisibility`: Custom command for element visibility with retry logic
+- `checkElementVisibility`: Custom command for element visibility with retry logic (I decided not to use it, but I let it in the code)
 - Utility functions for common operations (e.g., email generation)
 
 ### Error Handling
 - Retry logic for flaky elements
-- Screenshots on test failure
 - Comprehensive error logging
-
-## 🔧 Available Scripts
-
-```json
-{
-  "test": "cypress run",
-  "merge:report": "npx mochawesome-merge mochawesome-report/*.json > mochawesome-report/merged.json",
-  "generate:html": "npx marge mochawesome-report/merged.json --reportDir mochawesome-report --reportFilename index.html",
-  "test:report": "npm run test && npm run merge:report && npm run generate:html",
-  "open:report": "open mochawesome-report/index.html"
-}
-```
-
-## 📝 Considerations
-
-- **Browser Compatibility:** Tests run on Chrome by default
-- **Network Stability:** Tests include retry logic for network issues
-- **Data Cleanup:** Tests use unique email generation to avoid conflicts
-- **Environment:** Configured for production environment (www.cookunity.com)
-
-## 🤝 Contributing
-
-1. Follow the existing code structure and naming conventions
-2. Use camelCase for file and folder names
-3. Organize selectors in appropriate files
-4. Add proper test descriptions and assertions
-5. Update this README if adding new features
 
 ## 📚 References
 

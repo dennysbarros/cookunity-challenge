@@ -119,9 +119,8 @@ Some limitations came up during implementation that required specific workaround
 
 The project uses Mochawesome for generating HTML test reports:
 
-- **JSON Reports:** Generated in `mochawesome-report/`
-- **HTML Report:** Generated as `mochawesome-report/index.html`
-- **Merged Report:** Combines all test results
+- **JSON Reports:** Generated in `test-reports/`
+- **Merged Report:** Combines all test results in `merged_report.html`
 
 ## 🏛️ Architecture & Best Practices
 

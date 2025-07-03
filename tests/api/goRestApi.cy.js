@@ -15,11 +15,11 @@ describe('GoRest API - CRUD tests', () => {
 
   it('should update the first user name and validate the response', () => {
     const updatedName = 'Dennys Barros QA';
+    const email = 'jana.waters@hotmail.us';
 
     cy.request(goRestApi.usersEndpoint).then((res) => {
       const firstUser = res.body.data[0];
       const userId = firstUser.id;
-      const email = 'jana.waters@hotmail.us'; // email especificado no processo seletivo
 
       cy.request({
         method: 'PATCH',

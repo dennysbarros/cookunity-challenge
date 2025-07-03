@@ -7,26 +7,13 @@ This repository contains automated tests for the CookUnity QA Automation Challen
 ```
 cookunity-challenge/
 ├── tests/
-│   ├── api/                    # Backend API tests
-│   │   └── goRestApi.cy.js     # GoRest API CRUD tests
-│   ├── e2e/                    # Frontend E2E tests
-│   │   ├── orderNow/           # Order flow tests
-│   │   │   ├── orderNow.cy.js
-│   │   │   └── orderNowSelectors.js
-│   │   ├── login/              # Login/Signup tests
-│   │   │   └── loginSelectors.js
-│   │   └── mealSelect/         # Meal selection tests
-│   │       └── mealSelectSelectors.js
-│   ├── fixtures/               # Test data
-│   │   ├── goRestApi.json      # API endpoints and tokens
-│   │   └── users.json          # User test data
-│   └── support/                # Cypress support files
-│       ├── commands.js         # Custom Cypress commands
-│       ├── e2e.js             # E2E configuration
-│       └── utils.js            # Utility functions
-├── cypress.config.js           # Cypress configuration
-├── package.json                # Dependencies and scripts
-└── README.md                   # This file
+│   ├── api/                    → API tests (GoRest)
+│   ├── e2e/                    → E2E tests for Order Now flow
+│   ├── fixtures/               → Test data (users, API config)
+│   └── support/                → Commands, selectors, utils
+├── cypress.config.js
+├── package.json
+└── README.md
 ```
 
 ## 🚀 Getting Started
@@ -54,11 +41,7 @@ npm test
 
 ### Run Tests with HTML Report
 ```bash
-npm run test:report
-```
-
-### Open HTML Report
-```bash
+npm run test
 npm run open:report
 ```
 

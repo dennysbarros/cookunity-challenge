@@ -8,9 +8,9 @@ This repository contains automated tests for the CookUnity QA Automation Challen
 cookunity-challenge/
 ├── tests/
 │   ├── api/                    → API tests (GoRest)
-│   ├── e2e/                    → E2E tests for Order Now flow
+│   ├── e2e/                    → E2E tests for Order Now flow and selectors
 │   ├── fixtures/               → Test data (users, API config)
-│   └── support/                → Commands, selectors, utils
+│   └── support/                → Commands, utils
 ├── cypress.config.js
 ├── package.json
 └── README.md

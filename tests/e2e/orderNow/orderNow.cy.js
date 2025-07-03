@@ -4,8 +4,8 @@ import { mealSelectSelectors } from "../mealSelect/mealSelectSelectors";
 import { qa_user } from "../../fixtures/users.json"; 
 import { generateUniqueEmail } from "../../support/utils";
 
-describe("Validate Order Now Promo", () => {
-    it("Verify that a new user can participate of the Order Now Promo", () => {
+describe("Validate Order Now feature", () => {
+    it("Verify that a new user can use the Order Now feature", () => {
         const uniqueEmail = generateUniqueEmail();
 
         cy.step('Visit Cook Unity Home Page');

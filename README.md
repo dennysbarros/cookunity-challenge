@@ -102,9 +102,8 @@ Some limitations came up during implementation that required specific workaround
 - The GoRest API PATCH test uses email "jana.waters@hotmail.us" as specified in requirements, but this email already exists in the API database, causing the test to fail on subsequent runs. Also, the API has a default limit of 10 users per page. 
 - In this case, I decided to follow the exact challenge requirements without implementing pagination or email generation, as these were not specified in the test requirements. 
 
-## 🛠️ Configuration
+## 🛠️ Cypress Configuration
 
-### Cypress Configuration
 - **Base URL:** https://www.cookunity.com
 - **Default Timeout:** 10 seconds
 - **Screenshots:** Enabled on failure

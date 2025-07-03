@@ -7,7 +7,14 @@ module.exports = defineConfig({
     defaultCommandTimeout: 10000,
     retries: { runMode: 2, openMode: 2 },
     screenshotOnRunFailure: true,
-    specPattern: "./frontend-e2e/**/*.{spec.js,cy.js}",
-    supportFile: 'frontend-e2e/support/e2e.js',
+    specPattern: "./tests/**/*.{spec.js,cy.js}",
+    supportFile: 'tests/support/e2e.js',
+    reporter: 'mochawesome',
+    reporterOptions: {
+      reportDir: 'mochawesome-report',
+      overwrite: false,
+      html: false, 
+      json: true,
+    },
   },
 });

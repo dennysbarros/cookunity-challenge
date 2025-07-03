@@ -107,7 +107,6 @@ Some limitations came up during implementation that required specific workaround
 ### Cypress Configuration
 - **Base URL:** https://www.cookunity.com
 - **Default Timeout:** 10 seconds
-- **Retries:** 2 attempts for both run and open modes
 - **Screenshots:** Enabled on failure
 - **Reporter:** Mochawesome for HTML reports
 

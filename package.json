@@ -4,10 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "cypress run",
-    "merge:report": "npx mochawesome-merge mochawesome-report/*.json > mochawesome-report/merged.json",
-    "generate:html": "npx marge mochawesome-report/merged.json --reportDir mochawesome-report --reportFilename index.html",
-    "open:report": "npm run merge:report && npm run generate:html && open mochawesome-report/index.html"
+    "clean:reports": "rm -rf test-reports",
+    "test": "npm run clean:reports && cypress run",
+    "merge:report": "npx mochawesome-merge test-reports/*.json > test-reports/merged_report.json",
+    "generate:html": "npx marge test-reports/merged_report.json --reportDir test-reports --reportFilename merged_report.html",
+    "open:report": "npm run merge:report && npm run generate:html && open test-reports/merged_report.html"
   },
   "keywords": [],
   "author": "",

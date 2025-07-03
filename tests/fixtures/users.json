@@ -1,9 +1,10 @@
 {
-    "qa_mail": {
+    "qa_user": {
       "email": "qa.mail@gmail.com",
       "firstName": "My name",
       "lastName": "My Lastname",
-      "password": "123123123"
+      "password": "123123123",
+      "zipCode": "10001"
     }
   }
   

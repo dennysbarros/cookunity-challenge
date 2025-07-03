@@ -4,13 +4,19 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "cypress run",
+    "merge:report": "npx mochawesome-merge mochawesome-report/*.json > mochawesome-report/merged.json",
+    "generate:html": "npx marge mochawesome-report/merged.json --reportDir mochawesome-report --reportFilename index.html",
+    "open:report": "npm run merge:report && npm run generate:html && open mochawesome-report/index.html"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "cypress": "^14.5.0",
-    "cypress-network-idle": "^1.15.0"
+    "cypress-plugin-steps": "^1.2.1",
+    "mochawesome": "^7.1.3",
+    "mochawesome-merge": "^5.0.0",
+    "mochawesome-report-generator": "^6.2.0"
   }
 }

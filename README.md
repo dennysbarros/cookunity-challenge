@@ -75,7 +75,7 @@ npx cypress open
 - URL must contain "en/meal-select"
 - Verify more than one meal is displayed in the meals list
 
-**Issues & Decisions**
+**Issues & Decisions:**
 
 Some limitations came up during implementation that required specific workarounds or conscious choices:
 
@@ -97,7 +97,7 @@ Some limitations came up during implementation that required specific workaround
 3. PATCH https://gorest.co.in/public/v1/users/{userId}
 4. Assert: name updated and status code 200
 
-**Issues & Decisions**
+**Issues & Decisions:**
 
 - The GoRest API PATCH test uses email "jana.waters@hotmail.us" as specified in requirements, but this email already exists in the API database, causing the test to fail on subsequent runs. Also, the API has a default limit of 10 users per page. 
 - In this case, I decided to follow the exact challenge requirements without implementing pagination or email generation, as these were not specified in the test requirements. 

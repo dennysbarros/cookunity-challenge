@@ -110,10 +110,6 @@ Some limitations came up during implementation that required specific workaround
 - **Screenshots:** Enabled on failure
 - **Reporter:** Mochawesome for HTML reports
 
-### Test Data
-- **User Data:** `tests/fixtures/users.json`
-- **API Configuration:** `tests/fixtures/goRestApi.json`
-
 ## 📊 Reports
 
 The project uses Mochawesome for generating HTML test reports:
